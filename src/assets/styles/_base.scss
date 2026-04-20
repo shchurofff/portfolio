@@ -1,0 +1,35 @@
+html {
+  color-scheme: light dark;
+}
+
+body {
+  color: var(--color-text);
+  background:
+    radial-gradient(circle at top, rgba(194, 91, 45, 0.12), transparent 30%),
+    linear-gradient(180deg, var(--color-bg) 0%, var(--color-surface) 100%);
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--color-accent-soft);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+p {
+  color: var(--color-text-soft);
+}
