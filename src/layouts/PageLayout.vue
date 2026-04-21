@@ -1,6 +1,7 @@
 <template>
   <div class="page-layout">
-    <LayoutArrows />
+    <LayoutArrows :routes="routes" :current-path="route.path" />
+    <NavigationDialog :routes="routes" :current-path="route.path" />
     <main class="page-layout__main">
       <RouterView v-slot="{ Component, route }">
         <Transition name="page-slide" mode="out-in">
@@ -13,8 +14,23 @@
 
 <script setup lang="ts">
 import LayoutArrows from "@/components/LayoutArrows.vue";
-import { Transition } from "vue";
-import { RouterView } from "vue-router";
+import NavigationDialog from "@/components/NavigationDialog.vue";
+import { computed, Transition } from "vue";
+import { RouterView, useRoute, useRouter } from "vue-router";
+
+const route = useRoute();
+const router = useRouter();
+
+const routes = computed(() =>
+  router
+    .getRoutes()
+    .filter((item) => item.meta.showInNavigation)
+    .sort((a, b) => Number(a.meta.order) - Number(b.meta.order))
+    .map((item) => ({
+      path: item.path,
+      label: item.meta.label ?? item.name ?? item.path,
+    })),
+);
 </script>
 
 <style scoped lang="scss">
