@@ -5,10 +5,5 @@
 </template>
 
 <script setup lang="ts">
-import HomeViewHero from '@/components/HomeViewHero.vue'
+import HomeViewHero from "@/components/HomeViewHero.vue";
 </script>
-
-<style scoped lang="scss">
-.home-view {
-}
-</style>

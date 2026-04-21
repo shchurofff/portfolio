@@ -1,13 +1,14 @@
 <template>
   <section class="hero">
     <div class="hero__content">
-      <p class="hero__eyebrow">Frontend Developer</p>
-      <h1 class="hero__title">
-        Hi, my name is <span class="hero__accent">Oleg Shchurov</span>.
+      <p class="hero__eyebrow animate-fade-up animate-delay-1">Frontend Developer</p>
+      <h1 class="hero__title animate-blur-reveal animate-delay-2">
+        Hi, my name is
+        <span class="hero__accent">Oleg Shchurov</span>.
         <br />
         I build thoughtful web interfaces.
       </h1>
-      <p class="hero__text">
+      <p class="hero__text animate-fade-up animate-delay-3">
         I create modern frontend experiences with a focus on clarity, interaction and strong visual
         structure.
       </p>

@@ -8,8 +8,8 @@
 </template>
 
 <script setup lang="ts">
-import LayoutArrows from '@/components/LayoutArrows.vue'
-import { RouterView } from 'vue-router'
+import LayoutArrows from "@/components/LayoutArrows.vue";
+import { RouterView } from "vue-router";
 </script>
 
 <style scoped lang="scss">
@@ -21,7 +21,7 @@ import { RouterView } from 'vue-router'
 .page-layout__main {
   width: min(100% - 8rem, var(--container-width));
   margin-inline: auto;
-  padding-block: var(--space-24);
+  padding-block: var(--space-16);
 }
 
 @media (max-width: 900px) {
