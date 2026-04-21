@@ -34,7 +34,7 @@
 
 <script setup lang="ts">
 import { ArrowLeft, ArrowRight } from "@lucide/vue";
-import { computed } from "vue";
+import { computed, onMounted, onUnmounted } from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
@@ -65,6 +65,26 @@ const nextPage = computed(() => {
     return null;
   }
   return routes.value[currentPageIndex.value + 1];
+});
+
+const handleKeyDown = (event: KeyboardEvent) => {
+  if (event.key === "ArrowLeft" && previosPage.value) {
+    event.preventDefault();
+    router.push(previosPage.value.path);
+  }
+
+  if (event.key === "ArrowRight" && nextPage.value) {
+    event.preventDefault();
+    router.push(nextPage.value.path);
+  }
+};
+
+onMounted(() => {
+  window.addEventListener("keydown", handleKeyDown);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("keydown", handleKeyDown);
 });
 </script>
 
