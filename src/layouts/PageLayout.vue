@@ -2,13 +2,18 @@
   <div class="page-layout">
     <LayoutArrows />
     <main class="page-layout__main">
-      <RouterView />
+      <RouterView v-slot="{ Component, route }">
+        <Transition name="page-slide" mode="out-in">
+          <component :is="Component" :key="route.path" />
+        </Transition>
+      </RouterView>
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
 import LayoutArrows from "@/components/LayoutArrows.vue";
+import { Transition } from "vue";
 import { RouterView } from "vue-router";
 </script>
 
