@@ -1,7 +1,14 @@
 <template>
-  <main>
-    <div>Portfolio</div>
-  </main>
+  <section class="home-view">
+    <HomeViewHero />
+  </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import HomeViewHero from '@/components/HomeViewHero.vue'
+</script>
+
+<style scoped lang="scss">
+.home-view {
+}
+</style>
