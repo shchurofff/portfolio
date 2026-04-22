@@ -37,42 +37,66 @@
 <script setup lang="ts">
 import type { NavigationRoute } from "@/types/navigation";
 import { XIcon } from "@lucide/vue";
-import { onMounted, onUnmounted, ref } from "vue";
+import { onMounted, onUnmounted, ref, watch } from "vue";
 import { RouterLink } from "vue-router";
 
-const { routes, currentPath } = defineProps<{
+const { routes, currentPath, open } = defineProps<{
   routes: NavigationRoute[];
   currentPath: string;
+  open: boolean;
+}>();
+
+const emit = defineEmits<{
+  "update:open": [value: boolean];
 }>();
 
 const dialogRef = ref<HTMLDialogElement | null>(null);
 
 const openDialog = () => {
-  dialogRef.value?.showModal();
+  if (!dialogRef.value?.open) {
+    dialogRef.value?.showModal();
+  }
 };
 
 const closeDialog = () => {
-  dialogRef.value?.close();
+  if (dialogRef.value?.open) {
+    dialogRef.value.close();
+  }
+
+  emit("update:open", false);
 };
+
+watch(
+  () => open,
+  (value) => {
+    if (value) {
+      openDialog();
+    } else if (dialogRef.value?.open) {
+      dialogRef.value.close();
+    }
+  },
+);
 
 const handleKeyDown = (event: KeyboardEvent) => {
   if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
     event.preventDefault();
 
-    if (dialogRef.value?.open) {
-      closeDialog();
-    } else {
-      openDialog();
-    }
+    emit("update:open", !open);
   }
+};
+
+const handleDialogClose = () => {
+  emit("update:open", false);
 };
 
 onMounted(() => {
   window.addEventListener("keydown", handleKeyDown);
+  dialogRef.value?.addEventListener("close", handleDialogClose);
 });
 
 onUnmounted(() => {
   window.removeEventListener("keydown", handleKeyDown);
+  dialogRef.value?.removeEventListener("close", handleDialogClose);
 });
 </script>
 
