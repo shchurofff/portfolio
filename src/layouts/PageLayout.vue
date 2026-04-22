@@ -16,8 +16,8 @@
 </template>
 
 <script setup lang="ts">
-import LayoutArrows from "@/components/LayoutArrows.vue";
-import NavigationDialog from "@/components/NavigationDialog.vue";
+import LayoutArrows from "@/components/Layout/LayoutArrows.vue";
+import NavigationDialog from "@/components/Layout/NavigationDialog.vue";
 import { computed, ref } from "vue";
 import { RouterView, useRoute, useRouter } from "vue-router";
 
