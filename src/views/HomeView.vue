@@ -1,5 +1,5 @@
 <template>
-  <section class="home-view">
+  <section>
     <HomeViewHero />
   </section>
 </template>
