@@ -17,3 +17,10 @@
   margin-top: var(--space-6);
   line-height: 1.8;
 }
+
+.row__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
