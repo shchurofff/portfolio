@@ -1,6 +1,6 @@
-import type { AboutViewCardProps } from "@/components/AboutView/AboutViewCard.vue";
+import type { AboutCard } from "@/types/about-card";
 
-export const cardText: AboutViewCardProps[] = [
+export const cardText: AboutCard[] = [
   {
     subtitle: "work",
     title: "What I do",
