@@ -9,11 +9,8 @@
 </template>
 
 <script setup lang="ts">
-export interface AboutViewCardProps {
-  subtitle: string;
-  title: string;
-  content: string;
-}
+import type { AboutCard as AboutViewCardProps } from "@/types/about-card";
+
 const props = defineProps<AboutViewCardProps>();
 </script>
 
