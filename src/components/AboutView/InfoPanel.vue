@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   subtitle: string;
   title: string;
   text: string;

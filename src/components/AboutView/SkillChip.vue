@@ -8,7 +8,7 @@
 <script setup lang="ts">
 import type { SkillChip as SkillChipProps } from "@/types/skill-chip";
 
-const props = defineProps<SkillChipProps>();
+defineProps<SkillChipProps>();
 </script>
 
 <style scoped lang="scss">

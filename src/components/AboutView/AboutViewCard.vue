@@ -11,7 +11,7 @@
 <script setup lang="ts">
 import type { AboutCard as AboutViewCardProps } from "@/types/about-card";
 
-const props = defineProps<AboutViewCardProps>();
+defineProps<AboutViewCardProps>();
 </script>
 
 <style scoped lang="scss">
