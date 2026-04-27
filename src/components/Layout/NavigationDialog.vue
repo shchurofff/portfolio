@@ -3,7 +3,7 @@
     <div class="navigation-dialog__content">
       <div class="navigation-dialog__header">
         <div>
-          <p class="navigation-dialog__eyebrow">Quick Navigation</p>
+          <p class="eyebrow">Quick Navigation</p>
           <h2 class="navigation-dialog__title">Open a page</h2>
         </div>
 
@@ -128,14 +128,6 @@ onUnmounted(() => {
   justify-content: space-between;
   gap: var(--space-4);
   margin-bottom: var(--space-6);
-}
-
-.navigation-dialog__eyebrow {
-  color: var(--color-accent-strong);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .navigation-dialog__title {
