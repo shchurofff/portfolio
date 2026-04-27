@@ -30,59 +30,48 @@
       />
     </div>
 
-    <section class="skills-block animate-blur-reveal animate-delay-2">
-      <div class="skills-block__header">
-        <p>Professional Skillset</p>
-        <h2 class="skills-block__title">Technologies I use the most</h2>
-        <p class="skills-block__lead">
-          These are the tools and languages I return to most often while building products, testing
-          ideas and refining my workflow.
-        </p>
+    <InfoPanel
+      :subtitle="'Professional Slikllset'"
+      :title="'Technologies I use the most'"
+      :text="'These are the tools and languages I return to most often while building products, testing ideas and refining my workflow.'"
+    >
+      <div class="row__list">
+        <SkillChip
+          v-for="chip in skillChips"
+          :key="chip.label"
+          :icon="chip.icon"
+          :label="chip.label"
+        />
       </div>
+    </InfoPanel>
 
-      <div class="skills-block__list">
-        <span class="skill-chip">JavaScript</span>
-        <span class="skill-chip">TypeScript</span>
-        <span class="skill-chip">Vue</span>
-        <span class="skill-chip">React</span>
-        <span class="skill-chip">Svelte</span>
-        <span class="skill-chip">Lit</span>
-        <span class="skill-chip">SCSS</span>
-        <span class="skill-chip">Vite</span>
-        <span class="skill-chip">Node.js</span>
-        <span class="skill-chip">Git</span>
-        <span class="skill-chip">Go</span>
-        <span class="skill-chip">Zig</span>
+    <InfoPanel
+      :subtitle="'Let’s connect'"
+      :title="'Open to thoughtful products and good conversations.'"
+      :text="'If you want to talk about frontend, product ideas, collaboration or just share something interesting, feel free to reach out through any of the links below.'"
+    >
+      <div class="row__list">
+        <ContactChip
+          v-for="chip in contactChips"
+          :key="chip.label"
+          :label="chip.label"
+          :href="chip.href"
+          :icon="chip.icon"
+          :external="chip.external"
+        />
       </div>
-    </section>
-
-    <section class="contact-block animate-fade-up animate-delay-3">
-      <div class="contact-block__content">
-        <p>Let’s connect</p>
-        <h2 class="contact-block__title">Open to thoughtful products and good conversations.</h2>
-        <p class="contact-block__text">
-          If you want to talk about frontend, product ideas, collaboration or just share something
-          interesting, feel free to reach out through any of the links below.
-        </p>
-
-        <div class="contact-block__links">
-          <a href="https://github.com/" target="_blank" rel="noreferrer" class="contact-chip">
-            GitHub
-          </a>
-          <a href="https://t.me/" target="_blank" rel="noreferrer" class="contact-chip">
-            Telegram
-          </a>
-          <a href="mailto:shchurov.oleg27@gmail.com" class="contact-chip"> Email </a>
-          <a href="/resume" class="contact-chip"> Resume </a>
-        </div>
-      </div>
-    </section>
+    </InfoPanel>
   </section>
 </template>
 
 <script setup lang="ts">
 import AboutViewCard from "@/components/AboutView/AboutViewCard.vue";
+import ContactChip from "@/components/AboutView/ContactChip.vue";
+import InfoPanel from "@/components/AboutView/InfoPanel.vue";
+import SkillChip from "@/components/AboutView/SkillChip.vue";
 import { cardText } from "@/data/about-card-text";
+import { contactChips } from "@/data/contact-chips";
+import { skillChips } from "@/data/skill-chips";
 </script>
 
 <style scoped lang="scss">
@@ -134,113 +123,6 @@ import { cardText } from "@/data/about-card-text";
 .about-view__grid {
   display: grid;
   gap: var(--space-5);
-}
-
-.skills-block {
-  padding: var(--space-8);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background:
-    radial-gradient(circle at top right, var(--color-accent-soft), transparent 35%),
-    var(--color-surface-strong);
-  box-shadow: 0 24px 80px -42px var(--color-shadow);
-}
-
-.skills-block__header {
-  max-width: 44rem;
-}
-
-.skills-block__title {
-  margin-top: var(--space-4);
-  font-size: clamp(2rem, 4vw, 3.25rem);
-}
-
-.skills-block__lead {
-  max-width: 38rem;
-  margin-top: var(--space-4);
-  line-height: 1.8;
-}
-
-.skills-block__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-  margin-top: var(--space-8);
-}
-
-.skill-chip {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 3rem;
-  padding-inline: var(--space-5);
-  border: 1px solid color-mix(in srgb, var(--color-accent) 40%, var(--color-border));
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--color-accent-soft) 50%, transparent);
-  color: var(--color-text);
-  font-size: 0.98rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-}
-
-.contact-block {
-  padding: var(--space-8);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background:
-    linear-gradient(
-      135deg,
-      color-mix(in srgb, var(--color-accent-soft) 70%, transparent),
-      transparent
-    ),
-    var(--color-bg-elevated);
-  box-shadow: 0 24px 80px -42px var(--color-shadow);
-}
-
-.contact-block__content {
-  max-width: 42rem;
-}
-
-.contact-block__title {
-  margin-top: var(--space-4);
-  font-size: clamp(2rem, 4vw, 3.4rem);
-}
-
-.contact-block__text {
-  max-width: 36rem;
-  margin-top: var(--space-5);
-  line-height: 1.8;
-}
-
-.contact-block__links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-  margin-top: var(--space-8);
-}
-
-.contact-chip {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 3rem;
-  padding-inline: var(--space-5);
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  background: var(--color-surface-strong);
-  color: var(--color-text);
-  font-weight: 500;
-  transition:
-    transform var(--transition-base),
-    border-color var(--transition-base),
-    background-color var(--transition-base);
-
-  &:hover {
-    transform: translateY(-2px);
-    border-color: var(--color-accent);
-    background: var(--color-accent-soft);
-  }
 }
 
 @media (min-width: 920px) {
