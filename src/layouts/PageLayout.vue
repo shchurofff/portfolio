@@ -1,7 +1,11 @@
 <template>
   <div class="page-layout">
-    <LayoutArrows :routes="routes" :current-path="route.path" />
-    <NavigationDialog v-model:open="isNavigationOpen" :routes="routes" :current-path="route.path" />
+    <LayoutArrows :routes="navigationRoutes" :current-path="route.path" />
+    <NavigationDialog
+      v-model:open="isNavigationOpen"
+      :routes="navigationRoutes"
+      :current-path="route.path"
+    />
     <button type="button" @click="isNavigationOpen = true" class="page-layout__navigate_button">
       Navigate ⌘ K
     </button>
@@ -18,24 +22,14 @@
 <script setup lang="ts">
 import LayoutArrows from "@/components/Layout/LayoutArrows.vue";
 import NavigationDialog from "@/components/Layout/NavigationDialog.vue";
-import { computed, ref } from "vue";
-import { RouterView, useRoute, useRouter } from "vue-router";
+import { useNavigationRoutes } from "@/composables/useNavigationRoutes";
+import { ref } from "vue";
+import { RouterView, useRoute } from "vue-router";
 
 const route = useRoute();
-const router = useRouter();
-
 const isNavigationOpen = ref(false);
 
-const routes = computed(() =>
-  router
-    .getRoutes()
-    .filter((item) => item.meta.showInNavigation)
-    .sort((a, b) => Number(a.meta.order) - Number(b.meta.order))
-    .map((item) => ({
-      path: item.path,
-      label: item.meta.label ?? item.name ?? item.path,
-    })),
-);
+const { navigationRoutes } = useNavigationRoutes();
 </script>
 
 <style scoped lang="scss">
