@@ -1,5 +1,5 @@
 <template>
-  <section class="projects-view">
+  <section class="page">
     <SectionHeader
       :eyebrow="'Pet Projects'"
       :title="'Things I build when the workday is over.'"
@@ -27,12 +27,6 @@ import { Sparkles } from "@lucide/vue";
 </script>
 
 <style scoped lang="scss">
-.projects-view {
-  display: grid;
-  gap: var(--space-12);
-  padding-block: var(--space-8) var(--space-16);
-}
-
 .projects-view__list {
   display: grid;
   gap: var(--space-8);

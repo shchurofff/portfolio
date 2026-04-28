@@ -1,5 +1,5 @@
 <template>
-  <section class="resume-view">
+  <section class="page">
     <div class="resume-view__intro">
       <SectionHeader
         :eyebrow="'Resume'"
@@ -70,12 +70,6 @@ import { experience, highlights } from "@/data/resume";
 </script>
 
 <style scoped lang="scss">
-.resume-view {
-  display: grid;
-  gap: var(--space-16);
-  padding-block: var(--space-8) var(--space-16);
-}
-
 .resume-view__intro {
   display: grid;
   gap: var(--space-8);

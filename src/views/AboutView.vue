@@ -1,5 +1,5 @@
 <template>
-  <section class="about-view">
+  <section class="page">
     <div class="about-view__intro">
       <div class="about-view__portrait animate-fade-up animate-delay-1">
         <div class="about-view__portrait-frame">
@@ -70,12 +70,6 @@ import { skillChips } from "@/data/skill-chips";
 </script>
 
 <style scoped lang="scss">
-.about-view {
-  display: grid;
-  gap: var(--space-16);
-  padding-block: var(--space-8) var(--space-16);
-}
-
 .about-view__intro {
   display: grid;
   gap: var(--space-8);
