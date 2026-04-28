@@ -28,26 +28,7 @@
       :title="'Work history'"
       :text="'Selected experience focused on building scalable interfaces and improving product performance.'"
     >
-      <div class="resume-view__timeline">
-        <div v-for="job in experience" :key="job.company" class="resume-job">
-          <div class="resume-job__header">
-            <h3 class="resume-job__title">{{ job.role }}</h3>
-            <span class="resume-job__meta">{{ job.company }} · {{ job.period }}</span>
-          </div>
-
-          <p class="resume-job__highlight">
-            {{ job.highlight }}
-          </p>
-
-          <ul class="resume-job__list">
-            <li v-for="item in job.points" :key="item">{{ item }}</li>
-          </ul>
-
-          <ul class="resume-job__impact">
-            <li v-for="item in job.impact" :key="item">{{ item }}</li>
-          </ul>
-        </div>
-      </div>
+      <TimelineItem :experience="experience" />
     </InfoPanel>
 
     <InfoPanel
@@ -65,6 +46,7 @@
 
 <script setup lang="ts">
 import InfoPanel from "@/components/AboutView/InfoPanel.vue";
+import TimelineItem from "@/components/ResumeView/TimelineItem.vue";
 import SectionHeader from "@/components/Views/SectionHeader.vue";
 import { experience, highlights } from "@/data/resume";
 </script>
@@ -93,52 +75,6 @@ import { experience, highlights } from "@/data/resume";
   color: white;
   text-decoration: none;
   box-shadow: 0 10px 30px -10px var(--color-shadow);
-}
-
-.resume-view__timeline {
-  position: relative;
-  display: grid;
-  gap: var(--space-10);
-  margin-top: var(--space-6);
-  padding-left: var(--space-6);
-}
-
-.resume-view__timeline::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: var(--color-border);
-}
-
-.resume-job__title {
-  font-size: 1.25rem;
-}
-
-.resume-job__meta {
-  display: block;
-  opacity: 0.7;
-  margin-top: 0.25rem;
-}
-
-.resume-job__highlight {
-  margin-top: var(--space-2);
-  opacity: 0.85;
-}
-
-.resume-job__list {
-  margin-top: var(--space-4);
-  padding-left: 1.25rem;
-  line-height: 1.7;
-}
-
-.resume-job__impact {
-  margin-top: var(--space-3);
-  padding-left: 1.25rem;
-  line-height: 1.7;
-  color: var(--color-accent);
 }
 
 .resume-edu {
