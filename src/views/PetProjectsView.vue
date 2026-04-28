@@ -1,15 +1,10 @@
 <template>
   <section class="projects-view">
-    <div class="projects-view__intro">
-      <p class="eyebrow animate-fade-up animate-delay-1">Pet Projects</p>
-      <h1 class="projects-view__title display__title animate-blur-reveal animate-delay-2">
-        Things I build when the workday is over.
-      </h1>
-      <p class="display__text projects-view__text animate-fade-up animate-delay-3">
-        Side projects I work on to explore ideas, try new tools and stay curious. The list is small
-        for now, but it's only getting started.
-      </p>
-    </div>
+    <SectionHeader
+      :eyebrow="'Pet Projects'"
+      :title="'Things I build when the workday is over.'"
+      :text="'Side projects I work on to explore ideas, try new tools and stay curious. The list is small for now, but it is only getting started.'"
+    />
 
     <div class="projects-view__list">
       <ProjectCard v-for="project in projects" :key="project.title" v-bind="project" />
@@ -26,6 +21,7 @@
 
 <script setup lang="ts">
 import ProjectCard from "@/components/PetProjectsView/ProjectCard.vue";
+import SectionHeader from "@/components/Views/SectionHeader.vue";
 import { projects } from "@/data/projects";
 import { Sparkles } from "@lucide/vue";
 </script>
@@ -35,18 +31,6 @@ import { Sparkles } from "@lucide/vue";
   display: grid;
   gap: var(--space-12);
   padding-block: var(--space-8) var(--space-16);
-}
-
-.projects-view__intro {
-  max-width: 44rem;
-}
-
-.projects-view__title {
-  font-size: clamp(2.75rem, 6vw, 5.5rem);
-}
-
-.projects-view__text {
-  font-size: 1.05rem;
 }
 
 .projects-view__list {

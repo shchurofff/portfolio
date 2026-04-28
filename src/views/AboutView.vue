@@ -7,17 +7,11 @@
         </div>
       </div>
 
-      <div class="about-view__headline">
-        <p class="eyebrow animate-fade-up animate-delay-1">Who am I</p>
-        <h1 class="about-view__title display__title animate-blur-reveal animate-delay-2">
-          Frontend engineer, curious builder, and someone who still enjoys the craft after work.
-        </h1>
-        <p class="display__text about-view__text animate-fade-up animate-delay-3">
-          Hi! My name is Oleg. I work as a front-end developer and for the last few years I have
-          been building interfaces that feel clean, clear and alive. I enjoy shaping products from
-          small details all the way to the full experience people interact with every day.
-        </p>
-      </div>
+      <SectionHeader
+        :eyebrow="'Who am I'"
+        :title="'Frontend engineer, curious builder, and someone who still enjoys the craft after work.'"
+        :text="'Hi! My name is Oleg. I work as a front-end developer and for the last few years I have been building interfaces that feel clean, clear and alive. I enjoy shaping products from small details all the way to the full experience people interact with every day.'"
+      />
     </div>
 
     <div class="about-view__grid">
@@ -69,6 +63,7 @@ import AboutViewCard from "@/components/AboutView/AboutViewCard.vue";
 import ContactChip from "@/components/AboutView/ContactChip.vue";
 import InfoPanel from "@/components/AboutView/InfoPanel.vue";
 import SkillChip from "@/components/AboutView/SkillChip.vue";
+import SectionHeader from "@/components/Views/SectionHeader.vue";
 import { cardText } from "@/data/about-card-text";
 import { contactChips } from "@/data/contact-chips";
 import { skillChips } from "@/data/skill-chips";
@@ -106,18 +101,6 @@ import { skillChips } from "@/data/skill-chips";
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: calc(var(--radius-lg) - var(--space-3));
-}
-
-.about-view__headline {
-  max-width: 44rem;
-}
-
-.about-view__title {
-  font-size: clamp(2.75rem, 6vw, 5.5rem);
-}
-
-.about-view__text {
-  font-size: 1.05rem;
 }
 
 .about-view__grid {

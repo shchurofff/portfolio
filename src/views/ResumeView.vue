@@ -1,23 +1,15 @@
 <template>
   <section class="resume-view">
     <div class="resume-view__intro">
-      <div class="resume-view__intro-content">
-        <p class="eyebrow animate-fade-up animate-delay-1">Resume</p>
-
-        <h1 class="resume-view__title display__title animate-blur-reveal animate-delay-2">
-          Frontend engineer
-        </h1>
-
-        <p class="resume-view__text animate-fade-up animate-delay-3">
-          Frontend engineer focused on building scalable, data-heavy interfaces with React and
-          Next.js. I design complex UI systems — tables, forms, admin panels — and optimize them for
-          performance, maintainability and real-world usage.
-        </p>
-
+      <SectionHeader
+        :eyebrow="'Resume'"
+        :title="'Frontend engineer'"
+        :text="'Frontend engineer focused on building scalable, data-heavy interfaces with React and Next.js. I design complex UI systems — tables, forms, admin panels — and optimize them for performance, maintainability and real-world usage.'"
+      >
         <a href="/cv.pdf" download class="resume-view__download animate-fade-up animate-delay-4">
           Download CV
         </a>
-      </div>
+      </SectionHeader>
 
       <div class="resume-view__side animate-fade-up animate-delay-4">
         <div class="resume-side">
@@ -73,6 +65,7 @@
 
 <script setup lang="ts">
 import InfoPanel from "@/components/AboutView/InfoPanel.vue";
+import SectionHeader from "@/components/Views/SectionHeader.vue";
 import { experience, highlights } from "@/data/resume";
 </script>
 
@@ -93,19 +86,6 @@ import { experience, highlights } from "@/data/resume";
     grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
     align-items: start;
   }
-}
-
-.resume-view__intro-content {
-  max-width: 44rem;
-}
-
-.resume-view__title {
-  font-size: clamp(3.5rem, 6vw, 6.5rem);
-}
-
-.resume-view__text {
-  margin-top: var(--space-4);
-  font-size: 1.05rem;
 }
 
 .resume-view__download {
