@@ -12,7 +12,7 @@
       </SectionHeader>
 
       <div class="resume-view__side animate-fade-up animate-delay-4">
-        <div class="resume-side">
+        <div class="resume-side card">
           <div class="resume-side__block">
             <p class="resume-side__label">Highlights</p>
             <ul class="resume-side__list">
@@ -151,13 +151,6 @@ import { experience, highlights } from "@/data/resume";
 
 .resume-side {
   padding: var(--space-6);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background:
-    radial-gradient(circle at top right, var(--color-accent-soft), transparent 40%),
-    var(--color-surface-strong);
-  box-shadow: 0 24px 80px -42px var(--color-shadow);
-
   display: grid;
   gap: var(--space-6);
 }

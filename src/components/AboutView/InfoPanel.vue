@@ -1,9 +1,9 @@
 <template>
-  <section class="skills-block animate-blur-reveal animate-delay-2">
-    <div class="skills-block__header">
+  <section class="info-panel card animate-blur-reveal animate-delay-2">
+    <div class="info-panel__header">
       <p class="eyebrow">{{ subtitle }}</p>
-      <h2 class="skills-block__title">{{ title }}</h2>
-      <p class="skills-block__lead">
+      <h2 class="info-panel__title">{{ title }}</h2>
+      <p class="info-panel__lead">
         {{ text }}
       </p>
     </div>
@@ -21,25 +21,19 @@ defineProps<{
 </script>
 
 <style scoped lang="scss">
-.skills-block {
+.info-panel {
   padding: var(--space-8);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background:
-    radial-gradient(circle at top right, var(--color-accent-soft), transparent 35%),
-    var(--color-surface-strong);
-  box-shadow: 0 24px 80px -42px var(--color-shadow);
 }
 
-.skills-block__header {
+.info-panel__header {
   max-width: 44rem;
 }
-.skills-block__title {
+.info-panel__title {
   margin-top: var(--space-4);
   font-size: clamp(2rem, 4vw, 3.25rem);
 }
 
-.skills-block__lead {
+.info-panel__lead {
   max-width: 38rem;
   margin-top: var(--space-4);
   line-height: 1.8;

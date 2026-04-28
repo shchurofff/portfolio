@@ -1,5 +1,5 @@
 <template>
-  <article class="project-card animate-fade-up animate-delay-1">
+  <article class="card animate-fade-up animate-delay-1">
     <div class="project-card__layout">
       <div v-if="image" class="project-card__preview">
         <img :src="image" :alt="`${title} preview`" class="project-card__image" />
@@ -55,9 +55,7 @@ defineProps<Project>();
 </script>
 
 <style scoped lang="scss">
-.project-card {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+.skills-block {
   background:
     radial-gradient(circle at top right, var(--color-accent-soft), transparent 35%),
     var(--color-surface-strong);
