@@ -11,7 +11,7 @@
     </button>
     <main class="page-layout__main">
       <RouterView v-slot="{ Component, route }">
-        <Transition name="page-slide" mode="out-in">
+        <Transition name="fade">
           <component :is="Component" :key="route.path" />
         </Transition>
       </RouterView>

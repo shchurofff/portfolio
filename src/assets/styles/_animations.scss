@@ -64,7 +64,7 @@
 }
 
 .animate-underline::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: auto 0 0.08em;
   height: 0.16em;
@@ -104,19 +104,12 @@
   }
 }
 
-.page-slide-enter-active,
-.page-slide-leave-active {
-  transition:
-    opacity 280ms ease,
-    transform 280ms ease;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 180ms ease;
 }
 
-.page-slide-enter-from {
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
-  transform: translateX(32px);
-}
-
-.page-slide-leave-to {
-  opacity: 0;
-  transform: translateX(-32px);
 }
