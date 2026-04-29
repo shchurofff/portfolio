@@ -1,4 +1,4 @@
-#🧑‍💻 Personal Portfolio
+# 🧑‍💻 Personal Portfolio
 
 An animated personal portfolio built with Vue 3 and Vite. The project presents my background as a frontend engineer, selected work, a downloadable CV and a small set of side projects that will grow over time.
 
@@ -11,7 +11,7 @@ An animated personal portfolio built with Vue 3 and Vite. The project presents m
   <img src="./docs/images/main-screen.png" alt="Portfolio main screen" />
 </p>
 
-##✨ Overview
+## ✨ Overview
 
 The site is organized as a compact route-based experience:
 
@@ -22,7 +22,7 @@ The site is organized as a compact route-based experience:
 
 Navigation is handled through route arrows, a keyboard shortcut driven navigation dialog and page transitions.
 
-##🧩 Features
+## 🧩 Features
 
 - ⚡ Smooth page transitions and animations
 - 🧱 Component-driven architecture (Vue 3 + Composition API)
@@ -31,7 +31,7 @@ Navigation is handled through route arrows, a keyboard shortcut driven navigatio
 - 📄 Resume page with structured experience
 - 🎨 Consistent design system (spacing, typography, tokens)
 
-##🛠 Tech Stack
+## 🛠 Tech Stack
 
 - Framework: Vue 3 (Composition API)
 - Build tool: Vite
@@ -39,7 +39,7 @@ Navigation is handled through route arrows, a keyboard shortcut driven navigatio
 - Styling: SCSS (design tokens + utility approach)
 - Routing: Vue Router
 
-##🗂️ Project Structure
+## 🗂️ Project Structure
 
 - `src/views` page-level route components
 - `src/components` reusable UI and section components
@@ -48,7 +48,7 @@ Navigation is handled through route arrows, a keyboard shortcut driven navigatio
 - `src/assets/styles` global tokens, utilities and motion styles
 - `public/cv.pdf` downloadable resume
 
-##🚀 Available Scripts
+## 🚀 Available Scripts
 
 ```sh
 pnpm install
@@ -57,10 +57,10 @@ pnpm build
 pnpm lint
 ```
 
-##📄 Resume
+## 📄 Resume
 
 The `Resume` page includes a downloadable `cv.pdf` and a concise summary of my current CV in the same visual language as the rest of the portfolio.
 
-##💡 Notes
+## 💡 Notes
 
 This portfolio is intentionally selective. The projects page is built to grow gradually as more personal work becomes ready to show.
