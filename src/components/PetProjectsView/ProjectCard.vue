@@ -5,8 +5,6 @@
         <img
           :src="image"
           :alt="`${title} preview`"
-          width="2902"
-          height="1727"
           loading="eager"
           decoding="async"
           class="project-card__image"
