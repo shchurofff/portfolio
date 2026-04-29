@@ -1,8 +1,17 @@
-# Portfolio
+#🧑‍💻 Personal Portfolio
 
 An animated personal portfolio built with Vue 3 and Vite. The project presents my background as a frontend engineer, selected work, a downloadable CV and a small set of side projects that will grow over time.
 
-## Overview
+🔗 Live: https://your-domain.com
+📄 CV: https://your-domain.com/cv.pdf
+
+## Preview
+
+<p align="center">
+  <img src="./docs/images/main-screen.png" alt="Portfolio main screen" />
+</p>
+
+##✨ Overview
 
 The site is organized as a compact route-based experience:
 
@@ -13,24 +22,24 @@ The site is organized as a compact route-based experience:
 
 Navigation is handled through route arrows, a keyboard shortcut driven navigation dialog and page transitions.
 
-## Stack
+##🧩 Features
 
-- Vue 3
-- Vue Router
-- TypeScript
-- Vite
-- SCSS
-- Lucide icons
+- ⚡ Smooth page transitions and animations
+- 🧱 Component-driven architecture (Vue 3 + Composition API)
+- 🎯 Clean and readable layout system
+- 📱 Fully responsive design
+- 📄 Resume page with structured experience
+- 🎨 Consistent design system (spacing, typography, tokens)
 
-## Design Notes
+##🛠 Tech Stack
 
-- Custom layout shell with route-aware navigation
-- Motion utilities for staggered reveal and page transitions
-- Shared UI primitives for cards, headers, chips and info panels
-- Warm editorial palette with soft surface layers and subtle gradients
-- Responsive layouts tuned for desktop and mobile
+- Framework: Vue 3 (Composition API)
+- Build tool: Vite
+- Language: TypeScript
+- Styling: SCSS (design tokens + utility approach)
+- Routing: Vue Router
 
-## Project Structure
+##🗂️ Project Structure
 
 - `src/views` page-level route components
 - `src/components` reusable UI and section components
@@ -39,7 +48,7 @@ Navigation is handled through route arrows, a keyboard shortcut driven navigatio
 - `src/assets/styles` global tokens, utilities and motion styles
 - `public/cv.pdf` downloadable resume
 
-## Available Scripts
+##🚀 Available Scripts
 
 ```sh
 pnpm install
@@ -48,10 +57,10 @@ pnpm build
 pnpm lint
 ```
 
-## Resume
+##📄 Resume
 
-The `Resume` page includes a downloadable `cv.pdf` and an inline preview panel, so the current CV can be reviewed directly in the browser when supported.
+The `Resume` page includes a downloadable `cv.pdf` and a concise summary of my current CV in the same visual language as the rest of the portfolio.
 
-## Notes
+##💡 Notes
 
 This portfolio is intentionally selective. The projects page is built to grow gradually as more personal work becomes ready to show.
