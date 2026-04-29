@@ -1,3 +1,9 @@
+.page {
+  display: grid;
+  gap: var(--space-12);
+  padding-block: var(--space-8) var(--space-16);
+}
+
 .eyebrow {
   color: var(--color-accent-strong);
   font-size: 0.9rem;
@@ -23,4 +29,13 @@
   flex-wrap: wrap;
   gap: var(--space-3);
   margin-top: var(--space-8);
+}
+
+.card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at top right, var(--color-accent-soft), transparent 35%),
+    var(--color-surface-strong);
+  box-shadow: 0 24px 80px -42px var(--color-shadow);
 }

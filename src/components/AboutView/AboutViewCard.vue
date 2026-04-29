@@ -24,7 +24,6 @@ defineProps<AboutViewCardProps>();
 }
 
 .about-card__title {
-  /* margin-top: var(--space-4); */
   font-size: 1.6rem;
 }
 

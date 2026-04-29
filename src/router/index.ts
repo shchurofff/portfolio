@@ -7,12 +7,19 @@ import ResumeView from "@/views/ResumeView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+
+    return { top: 0 };
+  },
   routes: [
     {
       path: "/",
       name: "root",
       component: PageLayout,
-      redirect: "home",
+      redirect: "/home",
       meta: {
         label: "Layout",
         order: 0,

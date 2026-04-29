@@ -1,48 +1,66 @@
-# portfolio
+# 🧑‍💻 Personal Portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+An animated personal portfolio built with Vue 3 and Vite. The project presents my background as a frontend engineer, selected work, a downloadable CV and a small set of side projects that will grow over time.
 
-## Recommended IDE Setup
+🔗 Live: https://your-domain.com
+📄 CV: https://your-domain.com/cv.pdf
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Preview
 
-## Recommended Browser Setup
+<p align="center">
+  <img src="./docs/images/main-screen.png" alt="Portfolio main screen" />
+</p>
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## ✨ Overview
 
-## Type Support for `.vue` Imports in TS
+The site is organized as a compact route-based experience:
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- `Home` introduces the visual tone and overall focus.
+- `About` summarizes my background, stack and working style.
+- `Pet Projects` highlights the projects I am actively building.
+- `Resume` provides a concise CV summary and a downloadable PDF.
 
-## Customize configuration
+Navigation is handled through route arrows, a keyboard shortcut driven navigation dialog and page transitions.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 🧩 Features
 
-## Project Setup
+- ⚡ Smooth page transitions and animations
+- 🧱 Component-driven architecture (Vue 3 + Composition API)
+- 🎯 Clean and readable layout system
+- 📱 Fully responsive design
+- 📄 Resume page with structured experience
+- 🎨 Consistent design system (spacing, typography, tokens)
+
+## 🛠 Tech Stack
+
+- Framework: Vue 3 (Composition API)
+- Build tool: Vite
+- Language: TypeScript
+- Styling: SCSS (design tokens + utility approach)
+- Routing: Vue Router
+
+## 🗂️ Project Structure
+
+- `src/views` page-level route components
+- `src/components` reusable UI and section components
+- `src/data` typed content models for cards, projects, skills and resume data
+- `src/types` shared TypeScript interfaces
+- `src/assets/styles` global tokens, utilities and motion styles
+- `public/cv.pdf` downloadable resume
+
+## 🚀 Available Scripts
 
 ```sh
 pnpm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 pnpm dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
 pnpm build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
 pnpm lint
 ```
+
+## 📄 Resume
+
+The `Resume` page includes a downloadable `cv.pdf` and a concise summary of my current CV in the same visual language as the rest of the portfolio.
+
+## 💡 Notes
+
+This portfolio is intentionally selective. The projects page is built to grow gradually as more personal work becomes ready to show.

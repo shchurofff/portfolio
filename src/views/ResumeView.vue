@@ -1,67 +1,59 @@
 <template>
-  <section class="resume-view">
+  <section class="page">
     <div class="resume-view__intro">
-      <div class="resume-view__intro-content">
-        <p class="eyebrow animate-fade-up animate-delay-1">Resume</p>
-
-        <h1 class="resume-view__title display__title animate-blur-reveal animate-delay-2">
-          Frontend engineer
-        </h1>
-
-        <p class="resume-view__text animate-fade-up animate-delay-3">
-          Frontend engineer focused on building scalable, data-heavy interfaces with React and
-          Next.js. I design complex UI systems — tables, forms, admin panels — and optimize them for
-          performance, maintainability and real-world usage.
-        </p>
-
-        <a href="/cv.pdf" download class="resume-view__download animate-fade-up animate-delay-4">
-          Download CV
-        </a>
-      </div>
+      <SectionHeader
+        eyebrow="Resume"
+        title="Frontend engineer"
+        text="Frontend engineer focused on building scalable, data-heavy interfaces with React and Next.js. I design complex UI systems, such as tables, forms and admin panels, and optimize them for performance, maintainability and real-world usage."
+      >
+        <div class="resume-view__actions animate-fade-up animate-delay-4">
+          <a href="/cv.pdf" target="_blank" rel="noreferrer noopener" class="resume-view__download">
+            Open PDF
+          </a>
+          <a
+            href="/cv.pdf"
+            download="Oleg_Shchurov_CV.pdf"
+            class="resume-view__download resume-view__download--primary"
+          >
+            Download CV
+          </a>
+        </div>
+      </SectionHeader>
 
       <div class="resume-view__side animate-fade-up animate-delay-4">
-        <div class="resume-side">
+        <div class="resume-side card">
           <div class="resume-side__block">
-            <p class="resume-side__label">Highlights</p>
+            <p class="resume-side__label">Quick snapshot</p>
             <ul class="resume-side__list">
               <li v-for="item in highlights" :key="item">{{ item }}</li>
             </ul>
+          </div>
+
+          <div class="resume-side__divider"></div>
+
+          <div class="resume-side__block">
+            <p class="resume-side__label">CV file</p>
+            <p class="resume-side__text">
+              The downloadable PDF is the current version of my resume. The page keeps the same
+              story in a shorter, easier-to-scan form.
+            </p>
           </div>
         </div>
       </div>
     </div>
 
     <InfoPanel
-      :subtitle="'Experience'"
-      :title="'Work history'"
-      :text="'Selected experience focused on building scalable interfaces and improving product performance.'"
+      subtitle="Experience"
+      title="Work history"
+      text="Selected roles that shaped how I build scalable interfaces and improve product performance."
     >
-      <div class="resume-view__timeline">
-        <div v-for="job in experience" :key="job.company" class="resume-job">
-          <div class="resume-job__header">
-            <h3 class="resume-job__title">{{ job.role }}</h3>
-            <span class="resume-job__meta">{{ job.company }} · {{ job.period }}</span>
-          </div>
-
-          <p class="resume-job__highlight">
-            {{ job.highlight }}
-          </p>
-
-          <ul class="resume-job__list">
-            <li v-for="item in job.points" :key="item">{{ item }}</li>
-          </ul>
-
-          <ul class="resume-job__impact">
-            <li v-for="item in job.impact" :key="item">{{ item }}</li>
-          </ul>
-        </div>
-      </div>
+      <TimelineItem :experience="experience" />
     </InfoPanel>
 
     <InfoPanel
-      :subtitle="'Education'"
-      :title="'Academic background'"
-      :text="'Formal education and degree.'"
+      subtitle="Education"
+      title="Academic background"
+      text="Formal education listed in the current CV."
     >
       <div class="resume-edu">
         <h3>Master’s in Software Engineering</h3>
@@ -73,16 +65,12 @@
 
 <script setup lang="ts">
 import InfoPanel from "@/components/AboutView/InfoPanel.vue";
+import TimelineItem from "@/components/ResumeView/TimelineItem.vue";
+import SectionHeader from "@/components/Views/SectionHeader.vue";
 import { experience, highlights } from "@/data/resume";
 </script>
 
 <style scoped lang="scss">
-.resume-view {
-  display: grid;
-  gap: var(--space-16);
-  padding-block: var(--space-8) var(--space-16);
-}
-
 .resume-view__intro {
   display: grid;
   gap: var(--space-8);
@@ -90,81 +78,58 @@ import { experience, highlights } from "@/data/resume";
 
 @media (min-width: 920px) {
   .resume-view__intro {
-    grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
     align-items: start;
   }
 }
 
-.resume-view__intro-content {
-  max-width: 44rem;
-}
-
-.resume-view__title {
-  font-size: clamp(3.5rem, 6vw, 6.5rem);
-}
-
-.resume-view__text {
-  margin-top: var(--space-4);
-  font-size: 1.05rem;
+.resume-view__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
 }
 
 .resume-view__download {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
-  margin-top: var(--space-6);
-  padding: 0.6rem 1.2rem;
+  justify-content: center;
+  min-height: 2.8rem;
+  padding-inline: var(--space-5);
+  border: 1px solid var(--color-border);
   border-radius: 999px;
-  background: color-mix(in srgb, var(--color-accent) 80%, black);
-  color: white;
+  background: var(--color-surface-strong);
+  color: var(--color-text);
   text-decoration: none;
   box-shadow: 0 10px 30px -10px var(--color-shadow);
+  transition:
+    transform var(--transition-base),
+    border-color var(--transition-base),
+    background-color var(--transition-base),
+    color var(--transition-base);
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-accent);
+    background: var(--color-accent-soft);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
 }
 
-.resume-view__timeline {
-  position: relative;
-  display: grid;
-  gap: var(--space-10);
-  margin-top: var(--space-6);
-  padding-left: var(--space-6);
-}
+.resume-view__download--primary {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: #fff;
 
-.resume-view__timeline::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: var(--color-border);
-}
-
-.resume-job__title {
-  font-size: 1.25rem;
-}
-
-.resume-job__meta {
-  display: block;
-  opacity: 0.7;
-  margin-top: 0.25rem;
-}
-
-.resume-job__highlight {
-  margin-top: var(--space-2);
-  opacity: 0.85;
-}
-
-.resume-job__list {
-  margin-top: var(--space-4);
-  padding-left: 1.25rem;
-  line-height: 1.7;
-}
-
-.resume-job__impact {
-  margin-top: var(--space-3);
-  padding-left: 1.25rem;
-  line-height: 1.7;
-  color: var(--color-accent);
+  &:hover {
+    border-color: var(--color-accent-strong);
+    background: var(--color-accent-strong);
+    color: #fff;
+  }
 }
 
 .resume-edu {
@@ -172,18 +137,13 @@ import { experience, highlights } from "@/data/resume";
 }
 
 .resume-view__side {
-  display: block;
+  display: grid;
+  gap: var(--space-5);
+  align-self: start;
 }
 
 .resume-side {
   padding: var(--space-6);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background:
-    radial-gradient(circle at top right, var(--color-accent-soft), transparent 40%),
-    var(--color-surface-strong);
-  box-shadow: 0 24px 80px -42px var(--color-shadow);
-
   display: grid;
   gap: var(--space-6);
 }
@@ -194,14 +154,47 @@ import { experience, highlights } from "@/data/resume";
 }
 
 .resume-side__label {
+  color: var(--color-accent-strong);
   font-size: 0.8rem;
+  font-weight: 700;
   text-transform: uppercase;
-  opacity: 0.6;
   letter-spacing: 0.08em;
 }
 
 .resume-side__list {
+  display: grid;
+  gap: var(--space-3);
   padding-left: 1.25rem;
   line-height: 1.7;
+}
+
+.resume-side__list li::marker {
+  color: var(--color-accent);
+}
+
+.resume-side__divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-border) 20%,
+    var(--color-border) 80%,
+    transparent
+  );
+}
+
+.resume-side__text {
+  line-height: 1.7;
+  color: var(--color-text-soft);
+}
+
+@media (max-width: 640px) {
+  .resume-view__actions {
+    flex-direction: column;
+  }
+
+  .resume-view__download {
+    width: 100%;
+  }
 }
 </style>
