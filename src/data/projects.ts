@@ -1,4 +1,5 @@
 import type { Project } from "@/types/project";
+import { personalLinks } from "@/constants/links";
 
 export const projects: Project[] = [
   {
@@ -24,8 +25,16 @@ export const projects: Project[] = [
       "Server Actions",
     ],
     links: [
-      { label: "Live Demo", href: "https://developer-env.vercel.app/", external: true },
-      { label: "GitHub", href: "https://github.com/shchurofff/developer_env", external: true },
+      {
+        label: "Live Demo",
+        href: personalLinks.projects.developerEnvironment.live,
+        external: true,
+      },
+      {
+        label: "GitHub",
+        href: personalLinks.projects.developerEnvironment.github,
+        external: true,
+      },
     ],
     image: "/devenv-preview.png",
   },
