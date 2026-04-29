@@ -5,8 +5,8 @@
         <img
           :src="image"
           :alt="`${title} preview`"
-          width="1400"
-          height="833"
+          width="2902"
+          height="1727"
           loading="eager"
           decoding="async"
           class="project-card__image"
@@ -94,7 +94,7 @@ const isImageLoaded = ref(false);
 
 .project-card__image {
   width: 100%;
-  aspect-ratio: 1400 / 833;
+  aspect-ratio: 2902 / 1727;
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
   object-fit: cover;

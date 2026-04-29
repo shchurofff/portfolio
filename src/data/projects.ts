@@ -27,6 +27,6 @@ export const projects: Project[] = [
       { label: "Live Demo", href: "https://developer-env.vercel.app/", external: true },
       { label: "GitHub", href: "https://github.com/shchurofff/developer_env", external: true },
     ],
-    image: "/devenv-preview.jpg",
+    image: "/devenv-preview.png",
   },
 ];
