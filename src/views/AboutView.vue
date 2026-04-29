@@ -3,7 +3,17 @@
     <div class="about-view__intro">
       <div class="about-view__portrait animate-fade-up animate-delay-1">
         <div class="about-view__portrait-frame">
-          <img src="/about-avatar.png" alt="Portrait of Oleg Shchurov" class="about-view__image" />
+          <img
+            src="/about-avatar.jpg"
+            alt="Portrait of Oleg Shchurov"
+            height="350"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            class="about-view__image"
+            :class="{ 'about-view__image--loaded': isAvatarLoaded }"
+            @load="isAvatarLoaded = true"
+          />
         </div>
       </div>
 
@@ -67,6 +77,9 @@ import SectionHeader from "@/components/Views/SectionHeader.vue";
 import { cardText } from "@/data/about-card-text";
 import { contactChips } from "@/data/contact-chips";
 import { skillChips } from "@/data/skill-chips";
+import { ref } from "vue";
+
+const isAvatarLoaded = ref(false);
 </script>
 
 <style scoped lang="scss">
@@ -88,6 +101,7 @@ import { skillChips } from "@/data/skill-chips";
     linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0)),
     var(--color-bg-elevated);
   box-shadow: 0 24px 80px -36px var(--color-shadow);
+  overflow: hidden;
 }
 
 .about-view__image {
@@ -95,6 +109,16 @@ import { skillChips } from "@/data/skill-chips";
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: calc(var(--radius-lg) - var(--space-3));
+  opacity: 0;
+  transform: scale(1.015);
+  transition:
+    opacity 420ms ease,
+    transform 420ms ease;
+}
+
+.about-view__image--loaded {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .about-view__grid {

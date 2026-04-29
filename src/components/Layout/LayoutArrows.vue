@@ -146,7 +146,7 @@ onUnmounted(() => {
 @media (max-width: 640px) {
   .layout-arrows__button {
     top: auto;
-    bottom: 1rem;
+    bottom: calc(1rem + env(safe-area-inset-bottom));
     transform: none;
   }
 

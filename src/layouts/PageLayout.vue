@@ -47,7 +47,7 @@ const { navigationRoutes } = useNavigationRoutes();
 .page-layout__navigate_button {
   position: fixed;
   left: 50%;
-  bottom: 1rem;
+  bottom: calc(1rem + env(safe-area-inset-bottom));
   z-index: 20;
   display: inline-flex;
   align-items: center;
@@ -84,7 +84,7 @@ const { navigationRoutes } = useNavigationRoutes();
 @media (max-width: 640px) {
   .page-layout__main {
     width: min(100% - 2rem, var(--container-width));
-    padding-bottom: calc(var(--space-16) + 4.5rem);
+    padding-bottom: calc(var(--space-16) + 4.5rem + env(safe-area-inset-bottom));
   }
 }
 </style>
