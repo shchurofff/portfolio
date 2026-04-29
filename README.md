@@ -2,8 +2,8 @@
 
 An animated personal portfolio built with Vue 3 and Vite. The project presents my background as a frontend engineer, selected work, a downloadable CV and a small set of side projects that will grow over time.
 
-🔗 Live: https://your-domain.com
-📄 CV: https://your-domain.com/cv.pdf
+🔗 Live: https://shchurofff-portfolio.vercel.app/
+📄 CV: https://shchurofff-portfolio.vercel.app/cv.pdf
 
 ## Preview
 

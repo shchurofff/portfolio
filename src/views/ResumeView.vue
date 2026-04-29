@@ -7,12 +7,17 @@
         text="Frontend engineer focused on building scalable, data-heavy interfaces with React and Next.js. I design complex UI systems, such as tables, forms and admin panels, and optimize them for performance, maintainability and real-world usage."
       >
         <div class="resume-view__actions animate-fade-up animate-delay-4">
-          <a href="/cv.pdf" target="_blank" rel="noreferrer noopener" class="resume-view__download">
+          <a
+            :href="personalLinks.cv"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="resume-view__download"
+          >
             Open PDF
           </a>
           <a
-            href="/cv.pdf"
-            download="Oleg_Shchurov_CV.pdf"
+            :href="personalLinks.cv"
+            :download="downloadFileNames.cv"
             class="resume-view__download resume-view__download--primary"
           >
             Download CV
@@ -67,6 +72,7 @@
 import InfoPanel from "@/components/AboutView/InfoPanel.vue";
 import TimelineItem from "@/components/ResumeView/TimelineItem.vue";
 import SectionHeader from "@/components/Views/SectionHeader.vue";
+import { downloadFileNames, personalLinks } from "@/constants/links";
 import { experience, highlights } from "@/data/resume";
 </script>
 
