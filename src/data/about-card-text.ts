@@ -11,18 +11,18 @@ export const cardText: AboutCard[] = [
     subtitle: "stack",
     title: "What I work with",
     content:
-      "I mostly write JavaScript and TypeScript. Vue feels the most natural to me right now, but I also spent time with React, Svelte and other UI approaches because I like understanding how different tools shape developer experience.",
+      "I mostly work with TypeScript and JavaScript. Commercially, my main focus is React and Next.js, especially interfaces with forms, tables, dashboards and real product constraints. I have also spent time learning Vue because I like its mental model and would enjoy using it in production as well.",
   },
   {
     subtitle: "curiosity",
     title: "What I explore",
     content:
-      "Outside of daily frontend work I like learning new things just to keep my thinking fresh. Sometimes that means experimenting with Go or Zig, sometimes it means rebuilding tiny tools only for the fun of understanding how they work.",
+      "Outside of daily frontend work I keep learning Vue and I am curious about Nuxt as its full-stack counterpart. In my pet project I also worked with Prisma and PostgreSQL, building a small full-stack flow from auth to database queries. I like frontend, but I am gradually moving toward a broader full-stack skill set.",
   },
   {
     subtitle: "life",
     title: "What keeps me balanced",
     content:
-      "After work I still end up around computers more often than not, but I try to balance that with rogue-like games, good shows, long walks and occasional attempts to remember that touching grass is still part of a healthy routine.",
+      "Outside of work I like spending time away from the screen: walking, meeting friends, traveling around the country and sometimes just driving with no complicated plan. It helps me reset, notice new places and come back to work with a clearer head.",
   },
 ];
