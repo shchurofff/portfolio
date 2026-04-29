@@ -12,7 +12,7 @@ const router = createRouter({
       path: "/",
       name: "root",
       component: PageLayout,
-      redirect: "home",
+      redirect: "/home",
       meta: {
         label: "Layout",
         order: 0,
