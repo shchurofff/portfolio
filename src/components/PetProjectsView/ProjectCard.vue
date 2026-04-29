@@ -82,9 +82,6 @@ const isImageLoaded = ref(false);
 
 .project-card__preview {
   padding: var(--space-6) var(--space-6) 0;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.04), transparent),
-    var(--color-bg-elevated);
 }
 
 @media (min-width: 920px) {
