@@ -25,9 +25,9 @@
     </div>
 
     <InfoPanel
-      :subtitle="'Professional Slikllset'"
-      :title="'Technologies I use the most'"
-      :text="'These are the tools and languages I return to most often while building products, testing ideas and refining my workflow.'"
+      subtitle="Professional Skillset"
+      title="Technologies I use the most"
+      text="These are the tools and languages I return to most often while building products, testing ideas and refining my workflow."
     >
       <div class="row__list">
         <SkillChip
@@ -40,9 +40,9 @@
     </InfoPanel>
 
     <InfoPanel
-      :subtitle="'Let’s connect'"
-      :title="'Open to thoughtful products and good conversations.'"
-      :text="'If you want to talk about frontend, product ideas, collaboration or just share something interesting, feel free to reach out through any of the links below.'"
+      subtitle="Let’s connect"
+      title="Open to thoughtful products and good conversations."
+      text="If you want to talk about frontend, product ideas, collaboration or just share something interesting, feel free to reach out through any of the links below."
     >
       <div class="row__list">
         <ContactChip
