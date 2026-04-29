@@ -2,7 +2,17 @@
   <article class="card animate-fade-up animate-delay-1">
     <div class="project-card__layout">
       <div v-if="image" class="project-card__preview">
-        <img :src="image" :alt="`${title} preview`" class="project-card__image" />
+        <img
+          :src="image"
+          :alt="`${title} preview`"
+          width="1400"
+          height="833"
+          loading="eager"
+          decoding="async"
+          class="project-card__image"
+          :class="{ 'project-card__image--loaded': isImageLoaded }"
+          @load="isImageLoaded = true"
+        />
       </div>
 
       <div class="project-card__body">
@@ -50,8 +60,11 @@
 <script setup lang="ts">
 import type { Project } from "@/types/project";
 import { ArrowRight, ExternalLink } from "@lucide/vue";
+import { ref } from "vue";
 
 defineProps<Project>();
+
+const isImageLoaded = ref(false);
 </script>
 
 <style scoped lang="scss">
@@ -69,6 +82,9 @@ defineProps<Project>();
 
 .project-card__preview {
   padding: var(--space-6) var(--space-6) 0;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.04), transparent),
+    var(--color-bg-elevated);
 }
 
 @media (min-width: 920px) {
@@ -81,9 +97,20 @@ defineProps<Project>();
 
 .project-card__image {
   width: 100%;
+  aspect-ratio: 1400 / 833;
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
   object-fit: cover;
+  opacity: 0;
+  transform: scale(1.01);
+  transition:
+    opacity 420ms ease,
+    transform 420ms ease;
+}
+
+.project-card__image--loaded {
+  opacity: 1;
+  transform: scale(1);
 }
 
 @media (min-width: 920px) {
