@@ -33,38 +33,32 @@
 </template>
 
 <script setup lang="ts">
+import type { NavigationRoute } from "@/types/navigation";
 import { ArrowLeft, ArrowRight } from "@lucide/vue";
 import { computed, onMounted, onUnmounted } from "vue";
-import { RouterLink, useRoute, useRouter } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
 
-const route = useRoute();
+const { routes, currentPath } = defineProps<{
+  routes: NavigationRoute[];
+  currentPath: string;
+}>();
+
 const router = useRouter();
 
-const routes = computed(() =>
-  router
-    .getRoutes()
-    .filter((item) => item.meta.showInNavigation)
-    .sort((a, b) => Number(a.meta.order) - Number(b.meta.order))
-    .map((item) => ({
-      path: item.path,
-      label: item.meta.label,
-    })),
-);
-
-const currentPageIndex = computed(() => routes.value.findIndex((item) => route.path === item.path));
+const currentPageIndex = computed(() => routes.findIndex((item) => currentPath === item.path));
 
 const previosPage = computed(() => {
   if (currentPageIndex.value <= 0) {
     return null;
   }
-  return routes.value[currentPageIndex.value - 1];
+  return routes[currentPageIndex.value - 1];
 });
 
 const nextPage = computed(() => {
-  if (currentPageIndex.value === -1 || currentPageIndex.value >= routes.value.length - 1) {
+  if (currentPageIndex.value === -1 || currentPageIndex.value >= routes.length - 1) {
     return null;
   }
-  return routes.value[currentPageIndex.value + 1];
+  return routes[currentPageIndex.value + 1];
 });
 
 const handleKeyDown = (event: KeyboardEvent) => {
